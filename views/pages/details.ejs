@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- for detailhandler -->
+    <h1>details</h1>
+    <h2><%=data.title%></h2>
+    <h5><%=data.auther%></h5>
+    <img src="<%=data.img_url%>" alt="">
+    <p><%=data.description%></p>
+    <!-- end of detailhandler  -->
+
+
+<!-- for updatehandler  -->
+    <form action="/update/<%=data.id%>?_method=put" method="POST">
+        <input type="text" name="title" value="<%=data.title%>">
+        <input type="text" name="auther" value="<%=data.auther%>">
+        <input type="text" name="img_url" value="<%=data.img_url%>">
+        <input type="text" name="description" value="<%=data.description%>">
+        <input type="submit" value="update">
+    </form>
+<!-- end of updatehandler -->
+
+<!-- for deletehandler  -->
+    <form action="/delete/<%=data.id%>?_method=delete" method="POST">
+    <button>delete</button>
+    </form>
+<!-- end of deletehandler -->
+
+</body>
+
+</html>

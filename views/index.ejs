@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- for homehandler -->
+    <h1>hello</h1>
+    <% allData.forEach(val=>{%>
+    <div>
+        <h2><%=val.title%></h2>
+        <h5><%=val.auther%></h5>
+        <img src="<%=val.img_url%>" alt="news">
+        <p><%=val.description%></p>
+
+        <!-- end of homehandler -->
+
+        <!-- for addhandler  -->
+        <div>
+            
+            <button class="show">Add</button>
+            <form class="form" action="./add" method="GET">
+                <input type="text" name="title" value="<%=val.title%>">
+                <input type="text" name="auther" value="<%=val.auther%>">
+                <input type="text" name="img_url" value="<%=val.img_url%>">
+                <input type="text" name="description" value="<%=val.description%>">
+                <input type="submit" value="add news">   
+            </form>
+        </div>
+    </div>
+    <%})%>
+    <!-- to use the jquery in the app.js for showing and hiding the form-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/app.js"></script>
+
+    <!-- end of addhandler  -->
+</body>
+
+</html>

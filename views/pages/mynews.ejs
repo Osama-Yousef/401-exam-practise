@@ -1,0 +1,29 @@
+
+<!-- for the myNewshandler  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>hello from myCollection data</h1>
+        <%myCollection.forEach(val=>{%>
+        <div>
+            <h2><%=val.title%></h2>
+            <h5><%=val.auther%></h5>
+            <img src="<%=val.img_url%>" alt="news">
+            <!-- end of myNewshandler -->
+            <!-- for detailhandler  -->
+           <a href="/detail/<%=val.id%>"> <button>show details</button></a>
+           <!-- end of detailhandler  -->
+        </div>
+        <% })%>
+    </div>
+</body>
+
+</html>
