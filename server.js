@@ -45,7 +45,7 @@ app.delete('/delete/:delete_id' , deleteHandler)
 
 app.get('*', notFoundHandler);
 
-//=============================(routs Handlers)=============================\\
+//=============================call back functions (routs Handlers)=============================\\
 
 
 //**********homepagehandler*************\\
@@ -73,7 +73,7 @@ function News (val){
     this.description = val.description
 }
 
-// add homehandler part in index.ejs 
+// add homehandler part in index.ejs ( to prepare it at all and do ejs(rendering) process there and making counter   )
 
 
 //**********addHandler*************\\
@@ -239,9 +239,10 @@ function deleteHandler (req,res){
 //error handlers
 
 function notFoundHandler (req,res){
-    res.status(404).send('page not found') ;
+    res.status(404).send('page not found') ; // or the message "This route does not exist!!"
  }
 
  function errorHandler (err,req,res){
      res.status(500).send(err);
  }
+ 
